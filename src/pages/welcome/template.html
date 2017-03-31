@@ -1,0 +1,18 @@
+<ion-content class="tutorial-page">
+
+  <ion-slides pager class="" (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let slide of sliderData" [style.backgroundColor]="slide.color">
+      <div class="slide-content">
+        <img [src]="slide.image" class="slide-image"/>
+        <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+        <p [innerHTML]="slide.description"></p>
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+  <div class="slide-footer-navigation" >
+    <button class="button button-clear" style="float: left;" (click)="prevSlide();">Prev</button>
+    <button  class="button button-clear" style="float: right;" (click)="nextSlide();" >Next</button>
+  </div>
+
+</ion-content>
